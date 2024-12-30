@@ -1,0 +1,259 @@
+/* General Reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Allow scrolling for the entire page */
+body {
+    min-height: 100%;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Dashboard Container */
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.quiz-sidebar {
+    width: 250px;
+    background-color: #333;
+    color: #fff;
+    height: 100%;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto; /* Ensure sidebar is scrollable if content overflows */
+}
+
+.quiz-sidebar .app-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.quiz-sidebar .sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.quiz-sidebar .sidebar-menu li {
+    margin: 15px 0;
+}
+
+.quiz-sidebar .sidebar-menu a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.quiz-sidebar .sidebar-menu a:hover {
+    background-color: #444;
+    transform: scale(1.05);
+}
+
+.quiz-sidebar .sidebar-menu a.active {
+    background-color: #4CAF50;
+    font-weight: bold;
+}
+
+.quiz-sidebar .dropdown .submenu {
+    list-style: none;
+    padding-left: 20px;
+    display: none;
+}
+
+.quiz-sidebar .dropdown:hover .submenu {
+    display: block;
+}
+
+.quiz-sidebar .sidebar-menu a.logout {
+    background-color: #e74c3c;
+    text-align: center;
+}
+
+.quiz-sidebar .sidebar-menu a.logout:hover {
+    background-color: #c0392b;
+}
+
+/* Main Content */
+/* Main Content */
+.content {
+    margin-left: 250px; /* Adjust for sidebar */
+    min-height: 100vh;  /* Ensures the content takes full height */
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: flex-start; /* Adjust content to start from the top */
+    flex-direction: column;
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Category Container */
+.category-container {
+    max-width: 900px;
+    width: 100%;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+}
+
+.category-container h2 {
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Add Category Form */
+.add-category-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.add-category-form input {
+    padding: 14px;
+    width: 100%;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fafafa;
+}
+
+.add-category-form input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+    outline: none;
+}
+
+.add-category-form button {
+    padding: 14px 20px;
+    background: linear-gradient(145deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.add-category-form button:hover {
+    background: linear-gradient(145deg, #45a049, #4CAF50);
+    transform: scale(1.05);
+}
+
+.add-category-form button:active {
+    transform: scale(0.98);
+}
+
+/* Message Styles */
+.message {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* Categories Table */
+.categories-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    font-size: 1.1rem;
+}
+
+.categories-list th, .categories-list td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 2px solid #f2f2f2;
+}
+
+.categories-list th {
+    background-color: #f5f5f5;
+    color: #333;
+    font-weight: 500;
+}
+
+.categories-list tr:hover {
+    background-color: #fafafa;
+}
+
+/* Action Buttons */
+.categories-list .edit-btn, .categories-list .delete-btn {
+    padding: 8px 18px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.categories-list .edit-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+.categories-list .edit-btn:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.categories-list .delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.categories-list .delete-btn:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Table Actions */
+.categories-list .actions {
+    display: flex;
+    gap: 10px;
+}
+
